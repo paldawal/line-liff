@@ -42,7 +42,7 @@
     console.log("Hello World!")
   </script> -->
 
-  <!-- <script src="https://static.line-scdn.net/liff/edge/versions/2.8.1/sdk.js"></script> -->
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.8.1/sdk.js"></script> -->
   <script>
     function createUniversalLink() {
     }
@@ -75,12 +75,16 @@
     }
 
     function getEnvironment() {
+      document.getElementById("os").append(liff.getOS())
+      document.getElementById("language").append(liff.getLanguage())
+      document.getElementById("version").append(liff.getVersion())
+      document.getElementById("accessToken").append(liff.getAccessToken())
+      document.getElementById("isInClient").append(liff.isInClient())
     }
 
     async function main() {
-      alert("LINE Developers x Skooldio")
-      await liff.init({ liffId: "YOUR-LIFF-ID" })
-      // getEnvironment()
+      await liff.init({ liffId: "1655870536-Za5P6zP0" })
+      getEnvironment()
       // getUserProfile()
       // getContext()
       // getFriendship()
