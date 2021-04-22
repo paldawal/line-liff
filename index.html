@@ -66,13 +66,12 @@
     }
 
     async function sendMsg() {
-      if (liff.getContext().type !=="none") {
-        await liff.sendMessages([
-          {
-                "type": "sticker",
+      if (liff.getContext().type !== "none" && liff.getContext().type !== "external") {
+    // Send messages here.
+    "type": "sticker",
                 "stickerId": 1,
                 "packageId": 1
-          }  
+} 
        ])
        alert("Message send")
       }
